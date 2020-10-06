@@ -12,6 +12,7 @@ namespace DataAccessLayer.Controller
         IEnumerable<SingleTable> GetAll();
         IEnumerable<SingleTable> GetById(int nid);
         IEnumerable<SingleTable> GetByAdat1(string adat);
+        IEnumerable<SingleTable> GetByAdat2(string valami);
         bool ModifySingleTableRecord(SingleTable adat);
         bool DeleteSingleTableRecord(int nid);
     }
@@ -63,6 +64,11 @@ namespace DataAccessLayer.Controller
         public IEnumerable<SingleTable> GetByAdat1(string adat)
         {
             yield return enMintaDb.SingleTable.FirstOrDefault(s => s.Adat1 == adat.ToString());
+        }
+
+        public IEnumerable<SingleTable> GetByAdat2(string valami)
+        {
+            throw new System.NotImplementedException();
         }
 
         public IEnumerable<SingleTable> GetById(int nid)
