@@ -28,12 +28,12 @@ namespace MintaUnitTest
         public void SingleTableAdd()
         {
             SingleTableController singleTableController = new SingleTableController();
-            for (int i = 0; i < 1500; i++)
-            {
+            //for (int i = 0; i < 1500; i++)
+            //{
 
                var result = singleTableController.CreateSingleTableRecord(new SingleTable
                 {
-                    Adat1 = "HelgaKérdés",
+                    Adat1 = "LaciKérdés",
                     Adat2 = 112.05m,
                     Adat3 = DateTime.Now,
                     Adat4 = 1238,
@@ -41,7 +41,7 @@ namespace MintaUnitTest
 
                 });
                 Assert.IsTrue(result);
-            }
+            //}
            
         }
 

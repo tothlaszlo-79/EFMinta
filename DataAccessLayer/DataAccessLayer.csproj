@@ -53,8 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdditionalModels\TableWithLinkedData.cs" />
+    <Compile Include="Controller\Class1.cs" />
+    <Compile Include="Controller\MainCRUD.cs" />
     <Compile Include="Controller\SingleTableController.cs" />
     <Compile Include="Controller\TableWithForigenKeyController.cs" />
+    <Compile Include="Controller\TesztClass.cs" />
     <Compile Include="dbModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

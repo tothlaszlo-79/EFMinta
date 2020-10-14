@@ -89,14 +89,14 @@ namespace DataAccessLayer.Controller
         {
             //Linq összetett adatokra
             var mindenadat =
-                (from main in enMintaDb.TableWithForigenKey
+                (from Main1 in enMintaDb.TableWithForigenKey
                  from keyt in enMintaDb.ForigenKeyTable
-                 where main.ForigenKeyTable_id == keyt.nid && main.Active == true
+                 where Main1.ForigenKeyTable_id == keyt.nid && Main1.Active == true
                  select new TableWithLinkedData
                  {
-                     Adat1 = main.SajatAdat1,
-                     Adat2 = main.SajatAdat2,
-                     Adat3 = main.SajatAdat3,
+                     Adat1 = Main1.SajatAdat1,
+                     Adat2 = Main1.SajatAdat2,
+                     Adat3 = Main1.SajatAdat3,
                      Adat4 = keyt.KulsoAdat1
                  }).ToList();
             return mindenadat;
