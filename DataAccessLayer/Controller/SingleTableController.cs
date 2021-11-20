@@ -77,7 +77,7 @@ namespace DataAccessLayer.Controller
             yield return enMintaDb.SingleTable.FirstOrDefault(s => s.nid == nid & s.Active == true);
         }
 
-        public bool ModifySingleTableRecord( SingleTable adat)
+        public bool ModifySingleTableRecord(SingleTable adat)
         {
             try
             {

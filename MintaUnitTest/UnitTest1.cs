@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DataAccessLayer;
 using DataAccessLayer.Controller;
+using System.Linq;
 
 namespace MintaUnitTest
 {
@@ -13,14 +14,14 @@ namespace MintaUnitTest
         {
             SingleTableController singleTableController = new SingleTableController();
             var eredmeny = singleTableController.GetAll();
-            Assert.IsNotNull(eredmeny);
+            Assert.IsTrue(eredmeny.Count() > 0);
         }
         
         [TestMethod]
         public void SingleTableGetById()
         {
             SingleTableController singleTableController = new SingleTableController();
-            var eredmeny = singleTableController.GetById(2002);
+            var eredmeny = singleTableController.GetById(1);
             Assert.IsNotNull(eredmeny);
         }
 
@@ -28,12 +29,13 @@ namespace MintaUnitTest
         public void SingleTableAdd()
         {
             SingleTableController singleTableController = new SingleTableController();
-            //for (int i = 0; i < 1500; i++)
-            //{
+            for (int i = 0; i < 2000; i++)
+            {
 
-               var result = singleTableController.CreateSingleTableRecord(new SingleTable
+                var result = singleTableController.CreateSingleTableRecord(new SingleTable
                 {
-                    Adat1 = "LaciKérdés",
+                    Adat1 = "Kérdés " + i.ToString(),
+                    //Adat1 = "Kérdés",
                     Adat2 = 112.05m,
                     Adat3 = DateTime.Now,
                     Adat4 = 1238,
@@ -41,8 +43,8 @@ namespace MintaUnitTest
 
                 });
                 Assert.IsTrue(result);
-            //}
-           
+            }
+
         }
 
         [TestMethod]
@@ -60,7 +62,7 @@ namespace MintaUnitTest
         {
             SingleTableController singleTableController = new SingleTableController();
             //rekord számot itt kell megadni
-            var result = singleTableController.DeleteSingleTableRecord(2002);
+            var result = singleTableController.DeleteSingleTableRecord(1);
             Assert.IsTrue(result);
         }
 
@@ -70,11 +72,11 @@ namespace MintaUnitTest
             SingleTableController singleTableController = new SingleTableController();
             var result = singleTableController.ModifySingleTableRecord( 
                 new SingleTable {
-                    nid = 3,
-                    Adat1 = "Teszt 200921",
+                    nid = 2,
+                    Adat1 = "Teszt 201024",
                     Adat2 = 123.0m,
                     Adat3 = DateTime.Now,
-                    Adat4 = 123,
+                    Adat4 = 1234,
                     Active = true
                 });
             Assert.IsTrue(result);

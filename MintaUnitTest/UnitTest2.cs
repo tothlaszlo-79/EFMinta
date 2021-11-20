@@ -51,13 +51,13 @@ namespace EFMinta
             Assert.IsNotNull(result);
         }
 
-        [TestMethod]
-        public void GetByIdWithLinkedTableWithForeignKey()
-        {
-            TableWithForigenKeyController controller = new TableWithForigenKeyController();
-            var result = controller.GetAll_linked_ID(1);
-            Assert.IsNotNull(result);
-        }
+        //[TestMethod]
+        //public void GetByIdWithLinkedTableWithForeignKey()
+        //{
+        //    TableWithForigenKeyController controller = new TableWithForigenKeyController();
+        //    var result = controller.GetAll_linked_ID(1);
+        //    Assert.IsNotNull(result);
+        //}
 
         [TestMethod]
         public void CreateTableWithForeignKey()
